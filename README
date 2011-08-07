@@ -1,0 +1,11 @@
+Background:
+
+I spent 18 months working for True Knowledge, a web startup based in Cambridge. True Knowledge’s core product is an Internet Answer Engine queriable in a bespoke query language via an API. This project re-implements the Steinberg algorithm (detailed http://numenore.co.uk/wiki/maps) in the True Knowledge query language and PHP.
+
+Details:
+
+The implementation in src/steinberg.tkql assumes a user is querying about a place. You want to provide information on the most likely location given the IP Address of the user and the place name they provide. For example if a user has an IP address indicating their in London UK, and queries “Cambridge” are they more likely to be referring to Cambridge UK, Cambridge MA or Cambridge NZ.
+
+Possible places the user could be referring to are returned and relevant meta-data (latitude, longitude, True Knowledge unique ID, Population, Unique detailed description, thumbnail url, and distance from the user).
+
+The query in src/steinberg.tkql assumes the variables $place_name and $ip_adr are assigned to the place name in question and the IP address of the user. The PHP snippet in src/snippet.php turns this into a relevance measure.

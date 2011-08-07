@@ -1,0 +1,13 @@
+query lat, lon, id, wi, pop, urs, thumburl, distance
+[\"$place_name\"] [can denote] id 
+id [is an instance of] [settlement]
+wi [is the wikipedia page for] id
+lat [is the latitude of] id
+lon [is the longitude of] id
+pop [is the population of] id
+id [uniquely translates as] urs
+thumburl [is the url for the thumbnail image of] id /a
+[group: [\"128\"]; [\"128\"]] [is the width and height specified in] thumburl /a
+local [is the ip address geolocation of] [ip address: [\"$ip_adr\"]]
+refplace [is the capital of] local
+distance [is the distance between] [group: refplace; id] /a
